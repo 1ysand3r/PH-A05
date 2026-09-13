@@ -1,6 +1,6 @@
 import { useState, use, Suspense } from "react";
 import TechCard from "./TechCard.tsx";
-import YourStack from "./YourStack.tsx";
+import Stack from "./Stack.tsx";
 
 type Tech = {
   id: number;
@@ -64,7 +64,7 @@ const Technologies = () => {
           </Suspense>
         </div>
 
-        <YourStack
+        <Stack
           stack={stack}
           onRemove={handleRemove}
           onRemoveAll={handleRemoveAll}

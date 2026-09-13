@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 type Tech = {
   id: number;
   name: string;

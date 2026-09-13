@@ -2,6 +2,8 @@ import Banner from "./Banner.tsx"
 import Footer from "./Footer.tsx"
 import Header from "./Header.tsx"
 import Technologies from "./Technologies.tsx"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -11,6 +13,7 @@ function App() {
       <Banner/>
       <Technologies/>
       <Footer/>
+      <ToastContainer />
     </>
   )
 }

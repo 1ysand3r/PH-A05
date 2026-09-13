@@ -1,6 +1,7 @@
 import { useState, use, Suspense } from "react";
 import TechCard from "./TechCard.tsx";
 import Stack from "./Stack.tsx";
+import { toast } from "react-toastify";
 
 type Tech = {
   id: number;
@@ -14,8 +15,8 @@ type Tech = {
   rating: number;
 };
 
-const techPromise: Promise<Tech[]> = fetch("/technologies.json").then(
-  (res) => res.json()
+const techPromise: Promise<Tech[]> = fetch("/technologies.json").then((res) =>
+  res.json(),
 );
 
 const TechGrid = ({ onAdd }: { onAdd: (tech: Tech) => void }) => {
@@ -37,15 +38,24 @@ const Technologies = () => {
     const alreadyInStack = stack.some((item) => item.id === tech.id);
     if (!alreadyInStack) {
       setStack([...stack, tech]);
+      toast.success("Added successfully!");
+    } else {
+      toast.success("Already Added");
     }
   };
 
   const handleRemove = (id: number) => {
-    setStack(stack.filter((item) => item.id !== id));
+    setStack(
+      stack.filter((item) => {
+        item.id !== id;
+        toast.success("Removed successfully!");
+      }),
+    );
   };
 
   const handleRemoveAll = () => {
     setStack([]);
+    toast.success("Removed all successfully!");
   };
 
   return (

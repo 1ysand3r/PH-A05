@@ -2,7 +2,7 @@ import Logo from "./assets/logo-text.png";
 
 const Header = () => {
   return (
-    <nav className="flex justify-between container mx-auto my-2">
+    <nav className="flex justify-between container mx-auto my-2 sticky top-0 z-100 bg-white">
       <img src={Logo} alt="" />
       <ul className="flex gap-4 items-center">
         <li>Home</li>

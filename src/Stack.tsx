@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 type Tech = {
   id: number;
   name: string;
@@ -42,7 +44,7 @@ const YourStack = ({ stack, onRemove, onRemoveAll }: YourStackProps) => {
               </div>
             </div>
             <button
-              onClick={() => onRemove(tech.id)}
+              onClick={() =>  onRemove(tech.id)}
               className="text-slate-400 hover:text-slate-600"
             >
               ✕
@@ -53,7 +55,7 @@ const YourStack = ({ stack, onRemove, onRemoveAll }: YourStackProps) => {
 
       {stack.length > 0 && (
         <button
-          onClick={onRemoveAll}
+          onClick={()=> onRemoveAll()}
           className="btn w-full mt-4 border border-red-200 text-red-500 bg-white hover:bg-red-50 font-normal rounded-lg"
         >
           Remove All

@@ -63,6 +63,24 @@ The "Your Stack" side panel is just local state (`useState`), so adding a card p
 - Actual routing for Technologies / Projects / About / Contact instead of placeholder nav links
 - Real brand icons instead of emoji stand-ins for each logo
 
+## Q&A
+JSX & why use it: It’s basically HTML inside JavaScript. React uses it so you can structure your UI elements right next to your logic without dealing with tedious DOM methods.
+
+Props vs State: Props are passed down from a parent like function arguments (read-only). State is internal component data that you can change—when state updates, the component re-renders.
+
+useState hook: Lets a component hold onto changing data (like user inputs or toggle switches). You use it whenever you need the UI to update dynamically when something changes.
+
+useEffect hook: Runs side effects, like fetching data or setting timers. You use it to load JSON after the component renders so you don't trigger an infinite rendering loop.
+
+Unique key prop: React uses key to track which list items changed, got added, or removed. Without unique keys, React gets confused reordering items and causes weird UI bugs.
+
+Conditional rendering: Showing different UI based on a condition (like if/else). E.g., rendering an empty message when a list is empty:
+
+JavaScript
+```
+{items.length === 0 ? <p>Nothing here yet!</p> : <ItemList items={items} />}
+```
+Passing data up/down: Parent sends data down to child via props. To send data back up, parent passes a function as a prop, and the child calls that function with the new data.
 ## License
 
 Personal project — do whatever you want with it.

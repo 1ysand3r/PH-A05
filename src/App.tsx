@@ -1,14 +1,15 @@
 import Banner from "./Banner.tsx"
 import Footer from "./Footer.tsx"
 import Header from "./Header.tsx"
+import Technologies from "./Technologies.tsx"
 
 function App() {
 
   return (
     <>
-      {/* <h1 className="text-9xl text-red-500 italic">Hello</h1> */}
       <Header/>
       <Banner/>
+      <Technologies/>
       <Footer/>
     </>
   )

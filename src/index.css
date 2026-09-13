@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@utility mygrad {
+    @apply bg-linear-to-r from-orange-600 via-purple-600 via-75% to-violet-600;
+}
+
+/* 2. Now you can safely @apply it here */
+.grad-fg {
+    @apply mygrad text-transparent bg-clip-text;
+}
+ button {
+    border: none;
+ }
+
+ li,a {
+    @apply font-light text-[#475569];
+ }

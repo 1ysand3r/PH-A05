@@ -14,5 +14,9 @@
  }
 
  li,a {
-    @apply font-light text-[#475569];
+    @apply font-light text-[#475569] text-sm;
+ }
+
+ ul {
+    @apply list-none
  }

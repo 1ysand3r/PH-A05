@@ -4,6 +4,8 @@ A little playground app for exploring frontend, backend, database, and tooling o
 
 Pick a few technologies you like, add them to your stack, swap things out, and clear it whenever you want to start over. Nothing gets saved anywhere (yet), it's just a fun way to compare tools side by side.
 
+Deployed in [Netlify](https://idyllic-llama-1668db.netlify.app/)
+
 ## What's in here
 
 - **Hero section** with a quick pitch and call-to-action buttons

@@ -13,7 +13,7 @@ const Footer = () => {
           <a href="">Twitter</a>
           <a href="">LinkedIn</a>
         </div>
-        <p className="text-sm text-mist-400 py-9">© 2026 Dev Stack. All rights reserved.</p>
+        <p className="text-sm text-mist-400 py-4">© 2026 Dev Stack. All rights reserved.</p>
       </div>
       <div className="gap-4">
         <h3 className="font-bold">PRODUCT</h3>

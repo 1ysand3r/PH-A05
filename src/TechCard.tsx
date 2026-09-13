@@ -1,5 +1,3 @@
-import { toast } from "react-toastify";
-
 type Tech = {
   id: number;
   name: string;
@@ -18,6 +16,7 @@ type TechCardProps = {
 };
 
 const TechCard = ({ tech, onAdd }: TechCardProps) => {
+  
   return (
     <div className="bg-white border border-slate-100 rounded-2xl p-6 flex flex-col shadow-sm">
       <div className="flex items-center justify-between mb-4">

@@ -13,10 +13,12 @@
     border: none;
  }
 
- li,a {
+ li {
     @apply font-light text-[#475569] text-sm;
  }
-
+a {
+   @apply font-semibold text-[#475569]
+}
  ul {
     @apply list-none
  }

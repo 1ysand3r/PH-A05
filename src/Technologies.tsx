@@ -40,17 +40,16 @@ const Technologies = () => {
       setStack([...stack, tech]);
       toast.success("Added successfully!");
     } else {
-      toast.success("Already Added");
+      toast.info("Already Added");
     }
   };
 
   const handleRemove = (id: number) => {
+    const mytoast=stack.filter((item) => item.id !== id)
     setStack(
-      stack.filter((item) => {
-        item.id !== id;
-        toast.success("Removed successfully!");
-      }),
+      mytoast
     );
+    toast.success("Removed Stack");
   };
 
   const handleRemoveAll = () => {

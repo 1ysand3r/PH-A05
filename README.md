@@ -1,32 +1,66 @@
-# React + TypeScript + Vite
+# Dev Stack 🧩
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A little playground app for exploring frontend, backend, database, and tooling options — and putting together the "stack" you'd actually want to build your next project with.
 
-Currently, two official plugins are available:
+Pick a few technologies you like, add them to your stack, swap things out, and clear it whenever you want to start over. Nothing gets saved anywhere (yet), it's just a fun way to compare tools side by side.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What's in here
 
-## React Compiler
+- **Hero section** with a quick pitch and call-to-action buttons
+- **Explore the Technologies** — a grid of cards (React, Vue, Svelte, Node, Postgres, Redis, Docker, and more), each with a short description, category, difficulty level, and rating
+- **Your Stack** — a running list on the side that fills up as you click "Add to Stack," with a way to remove one item or clear everything
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the Oxlint configuration
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS v4
+- daisyUI
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Getting started
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+That'll spin up a local dev server — open the URL it gives you and you're good to go.
+
+To build for production:
+
+```bash
+npm run build
+```
+
+## Project structure
+
+```
+public/
+  technologies.json   # the actual tech data — icons, badges, ratings, etc.
+src/
+  App.tsx
+  Header.tsx
+  Banner.tsx
+  Technologies.tsx    # fetches technologies.json and manages "Your Stack"
+  TechCard.tsx         # one technology card
+  YourStack.tsx         # the sidebar showing what you've picked
+  Footer.tsx
+  index.css
+```
+
+## How the Technologies section works
+
+The list of technologies isn't hardcoded — `Technologies.tsx` fetches `technologies.json` from the `public` folder and reads it with React's `use()` hook (wrapped in a `<Suspense>` so it shows a loading state while the fetch is happening).
+
+The "Your Stack" side panel is just local state (`useState`), so adding a card pushes it into an array, and the ✕ button filters it back out. Nothing fancy — no global state library, no backend. If you want to persist a stack across page reloads, that'd be the next logical thing to add (localStorage would do the trick).
+
+## Wishlist / things that could be nicer
+
+- Only letting one technology be picked per category (frontend, database, etc.) like the "Pick one technology per category" line suggests
+- Saving the stack somewhere so it survives a refresh
+- Actual routing for Technologies / Projects / About / Contact instead of placeholder nav links
+- Real brand icons instead of emoji stand-ins for each logo
+
+## License
+
+Personal project — do whatever you want with it.
